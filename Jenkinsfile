@@ -3,7 +3,13 @@ pipeline {
   stages {
     stage('Buzz Buzz') {
       steps {
-        echo 'Bees Buzz!'
+        sh './jenkins/build.sh'
+      }
+    }
+
+    stage('Buzz Test') {
+      steps {
+        sh './jenkins/test-all.sh'
       }
     }
 
